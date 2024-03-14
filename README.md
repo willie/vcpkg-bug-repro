@@ -11,12 +11,12 @@ Run both of these on an Mac with Apple Silicon.
 
 ## build for Linux arm64 (fails)
 ```
-docker build -t vcpkg-bug-repro .
+% docker build -t vcpkg-bug-repro .
 ```
 
 # this is the error I get
 ```
-docker build -t vcpkg-bug-repro .
+% docker build -t vcpkg-bug-repro .
 [+] Building 216.0s (12/15)                                                                 docker:orbstack
  => [internal] load build definition from Dockerfile                                                   0.0s
  => => transferring dockerfile: 1.24kB                                                                 0.0s
