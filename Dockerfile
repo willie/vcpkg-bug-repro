@@ -20,7 +20,9 @@ RUN echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https:
 WORKDIR /example
 
 # vcpkg
-ENV VCPKG_FORCE_SYSTEM_BINARIES=1
+# docs say this is required true on arm64
+ENV VCPKG_FORCE_SYSTEM_BINARIES=true
+
 RUN apt-get -y update && apt-get install -y zip unzip tar linux-libc-dev pkg-config python3 && \
 	git clone https://github.com/Microsoft/vcpkg.git && ./vcpkg/bootstrap-vcpkg.sh
 
