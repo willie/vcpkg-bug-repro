@@ -1,0 +1,8 @@
+{
+	"name": "python3-bug-repo",
+	"version-string": "1.0.0",
+	"builtin-baseline": "e38b936343030e167a207ee4eddc3c6086caec56",
+	"dependencies": [
+		"python3"
+	]
+}
