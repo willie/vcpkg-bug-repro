@@ -1,6 +1,6 @@
 # vcpkg-bug-repro
 
-Run both of these on an Mac with Apple Silicon.
+Run these on an Mac with Apple Silicon.
 
 ## build for mac (works)
 ```
@@ -8,10 +8,14 @@ Run both of these on an Mac with Apple Silicon.
 % cmake -S . -B build -G Ninja
 % cmake --build build
 ```
+## build for Linux amd64 (works)
+```
+docker build --platform linux/amd64 .
+```
 
 ## build for Linux arm64 (fails)
 ```
-% docker build -t vcpkg-bug-repro .
+% docker build .
 ```
 
 ### this is the error I get
