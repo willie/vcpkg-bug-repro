@@ -27,3 +27,9 @@ RUN apt-get -y update && apt-get install -y zip unzip tar linux-libc-dev pkg-con
 COPY vcpkg.json .
 
 RUN ./vcpkg/vcpkg install --debug --x-install-root="./build/vcpkg_installed/"
+
+# source
+COPY . .
+
+RUN cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=Debug
+RUN cmake --build build --parallel $(nproc)

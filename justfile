@@ -35,14 +35,6 @@ reconfigure: clean configure
 rebuild: build
 	rm -f build/.ninja*
 
-# build using docker-compose
-compose-build *$ENV_FILE:
-	docker compose build
-
-# run using docker-compose
-compose-run:
-	docker compose up
-
-# build and run using docker-compose
-compose-build-run: compose-build compose-run
-
+# build using docker
+docker-build:
+	docker build -t {{program_name}} .
