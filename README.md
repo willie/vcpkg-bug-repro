@@ -14,7 +14,7 @@ Run both of these on an Mac with Apple Silicon.
 % docker build -t vcpkg-bug-repro .
 ```
 
-# this is the error I get
+### this is the error I get
 ```
 % docker build -t vcpkg-bug-repro .
 [+] Building 216.0s (12/15)                                                                 docker:orbstack
