@@ -1,6 +1,5 @@
-.DS_Store*
 build/
-.build/
-xcode/
+**/.git
+vcpkg/
 vcpkg_installed/
 .cache/

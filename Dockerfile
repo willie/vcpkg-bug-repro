@@ -26,15 +26,16 @@ ENV VCPKG_FORCE_SYSTEM_BINARIES=true
 RUN apt-get -y update && apt-get install -y autoconf automake autoconf-archive
 
 # for the build
-RUN apt-get -y update && apt-get install -y zip unzip tar linux-libc-dev pkg-config python3 && \
+RUN apt-get -y update && apt-get install -y zip unzip tar linux-libc-dev pkg-config && \
 	git clone https://github.com/Microsoft/vcpkg.git && ./vcpkg/bootstrap-vcpkg.sh
 
 COPY vcpkg.json .
 
-RUN ./vcpkg/vcpkg install --debug --x-install-root="./build/vcpkg_installed/"
+RUN ./vcpkg/vcpkg install --debug
 
 # source
 COPY . .
 
+RUN apt-get -y update && apt-get install -y python3 python3-pip python3-venv 
 RUN cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=Debug
 RUN cmake --build build --parallel $(nproc)
